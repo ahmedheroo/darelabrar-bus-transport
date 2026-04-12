@@ -309,10 +309,10 @@ export default function App() {
                 الشركة الرائدة في مجال النقل البري في المملكة العربية السعودية. نقدم خدمات نقل متميزة وآمنة بين مكة المكرمة والرياض بأسطول حديث ومجهز.
               </p>
               <div className="flex gap-4">
-                <a href="https://wa.me/966536532541?text=السلام%20عليكم،%20أريد%20الاستفسار" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                <a href="https://wa.me/966574262136?text=السلام%20عليكم،%20أريد%20الاستفسار" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                   <MessageCircle size={20} />
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100067821207004" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                <a href="https://www.facebook.com/profile.php?id=61571673840905" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                   <Facebook size={20} />
                 </a>
               </div>

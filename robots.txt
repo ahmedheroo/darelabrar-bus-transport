@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://dar-elabrar.com/sitemap.xml
