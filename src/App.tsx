@@ -19,8 +19,8 @@ import {
   ArrowLeft
 } from 'lucide-react';
 
-const WHATSAPP_NUMBER = "966536532541";
-const PHONE_NUMBER = "0536532541";
+const WHATSAPP_NUMBER = "966574262136";
+const PHONE_NUMBER = "0574262136";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function App() {
               <div className="bg-primary p-2 rounded-lg text-white">
                 <Bus size={28} />
               </div>
-              <span className="font-bold text-2xl text-primary-dark">دار الأبرار</span>
+              <span className="font-bold text-2xl text-primary-dark">موصل</span>
             </div>
             
             {/* Desktop Menu */}
@@ -127,7 +127,7 @@ export default function App() {
         <section id="features" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">لماذا تختار دار الأبرار؟</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">لماذا تختار موصل؟</h2>
               <p className="text-lg text-slate-600">نلتزم بتقديم أعلى معايير الجودة والراحة لضمان رحلة ممتعة وآمنة لجميع مسافرينا.</p>
             </div>
             
@@ -303,7 +303,7 @@ export default function App() {
                 <div className="bg-primary p-2 rounded-lg text-white">
                   <Bus size={24} />
                 </div>
-                <span className="font-bold text-2xl text-white">دار الأبرار</span>
+                <span className="font-bold text-2xl text-white">موصل</span>
               </div>
               <p className="text-slate-400 mb-6 max-w-md leading-relaxed">
                 الشركة الرائدة في مجال النقل البري في المملكة العربية السعودية. نقدم خدمات نقل متميزة وآمنة بين مكة المكرمة والرياض بأسطول حديث ومجهز.
@@ -348,7 +348,7 @@ export default function App() {
           </div>
           
           <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-            <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} دار الأبرار.</p>
+            <p>جميع الحقوق محفوظة &copy; {new Date().getFullYear()} موصل.</p>
           </div>
         </div>
       </footer>
