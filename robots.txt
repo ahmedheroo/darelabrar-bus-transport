@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.alharamain-travel.com/sitemap.xml
+Sitemap: https://www.dar-elabrar.com/sitemap.xml
