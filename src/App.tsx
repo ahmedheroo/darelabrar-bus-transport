@@ -104,6 +104,7 @@ export default function App() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
                   رحلات مريحة وآمنة من <span className="text-secondary">مكة المكرمة</span> إلى <span className="text-secondary">الرياض</span>
                 </h1>
+                <p className="text-center text-lg md:text-xl text-slate-200 mb-5 leading-relaxed">ومن الرياض الي مكة المكرمة</p>
                 <p className="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">
                   نقدم لك تجربة سفر استثنائية عبر أسطول من الحافلات الحديثة والمجهزة بكافة وسائل الراحة. احجز مقعدك الآن وانطلق في رحلة لا تُنسى.
                 </p>
@@ -226,8 +227,11 @@ export default function App() {
                       <MapPin className="text-secondary" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-xl">مسار الرحلة</h4>
-                      <p className="text-primary-100">مكة المكرمة ➔ الرياض</p>
+                      <h4 className="font-bold text-xl">مسارات متعددة للرحلات</h4>
+                     {/* <p className="text-primary-100">الرياض  ➔ مكة المكرمة </p>
+                      <p className="text-primary-100">  مكة المكرمة ➔  الرياض</p>
+                      <p className="text-primary-100">  الرياض ➔ المدينة المنورة  </p>
+                      */} 
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -381,6 +385,7 @@ function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+        route: 'من مكة المكرمة إلى الرياض',
     date: '',
     passengers: '1',
     notes: ''
@@ -398,11 +403,12 @@ function BookingForm() {
     
 *الاسم:* ${formData.name}
 *رقم الجوال:* ${formData.phone}
+*مسار الرحلة:* ${formData.route}
 *تاريخ الرحلة:* ${formData.date}
 *عدد الركاب:* ${formData.passengers}
 *ملاحظات إضافية:* ${formData.notes || 'لا يوجد'}
 
-أرغب بتأكيد الحجز من مكة إلى الرياض.`;
+أرغب بتأكيد الحجز  .`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
@@ -438,7 +444,20 @@ function BookingForm() {
           placeholder="05X XXX XXXX"
         />
       </div>
-
+  <div>
+        <label htmlFor="route" className="block text-sm font-medium text-slate-700 mb-1">مسار الرحلة (من / إلى)</label>
+        <select 
+          id="route" 
+          name="route"
+          value={formData.route}
+          onChange={handleChange}
+          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-slate-50"
+        >
+          <option value="من مكة المكرمة إلى الرياض">من مكة المكرمة إلى الرياض</option>
+          <option value="من الرياض إلى مكة المكرمة">من الرياض إلى مكة المكرمة</option>
+          <option value="من المدينة المنورة إلى الرياض ">من المدينة المنورة إلى الرياض </option>
+        </select>
+      </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="date" className="block text-sm font-medium text-slate-700 mb-1">تاريخ الرحلة</label>
