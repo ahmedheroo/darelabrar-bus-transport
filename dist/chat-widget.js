@@ -130,7 +130,7 @@
 
   /* ─── Defaults & State ────────────────────────────────────── */
   var DEFAULTS = {
-    apiUrl: 'http://localhost:5000',
+    apiUrl: 'http://darelabrarchatbot.runasp.net',
     position: 'right',
     primaryColor: BRAND.primary,
     provider: undefined,
