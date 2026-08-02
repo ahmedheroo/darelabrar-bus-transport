@@ -135,7 +135,7 @@
     primaryColor: BRAND.primary,
     provider: undefined,
     model: undefined,
-    avatar: '🚌'
+    avatar: '🤖'
   };
 
   var opts = {};
