@@ -695,7 +695,7 @@
     /* Header */
     var headerClass = 'chat-header' + (isRtl ? ' rtl' : '');
     var header = el('div', { className: headerClass, dir: isRtl ? 'rtl' : 'ltr' });
-    header.appendChild(el('div', { className: 'chat-avatar' }, opts.avatar || '🚌'));
+    header.appendChild(el('div', { className: 'chat-avatar' }, opts.avatar || '🤖'));
 
     var headerText = el('div', { className: 'chat-header-text' });
     headerText.appendChild(el('h3', null, getText('title')));
