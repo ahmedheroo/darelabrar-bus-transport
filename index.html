@@ -10,6 +10,49 @@
 
   gtag('config', 'G-57EETGZSF3');
 </script>
+    <!-- Google Ads (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18457098824"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18457098824');
+    </script>
+
+    <!-- تتبّع التواصل: ضغطة واتساب، ضغطة اتصال، إرسال نموذج الحجز -->
+    <script>
+      (function () {
+        if (window.__awConvInit) return;
+        window.__awConvInit = true;
+
+        var TAG = 'AW-18457098824';
+        var LABELS = {
+          whatsapp: 'kUywCPfD-oIdEMj0g-FE',
+          call: 'eXdaCPrD-oIdEMj0g-FE',
+          booking: 'ATLmCP3D-oIdEMj0g-FE'
+        };
+
+        function track(label) {
+          if (!label) return;
+          if (typeof gtag !== 'function') return;
+          gtag('event', 'conversion', { send_to: TAG + '/' + label });
+        }
+
+        document.addEventListener('click', function (e) {
+          var el = e.target;
+          var a = el && el.closest ? el.closest('a[href]') : null;
+          if (!a) return;
+          var href = a.getAttribute('href') || '';
+          if (href.indexOf('wa.me') > -1 || href.indexOf('api.whatsapp.com') > -1) track(LABELS.whatsapp);
+          else if (href.indexOf('tel:') === 0) track(LABELS.call);
+        }, true);
+
+        // نموذج الحجز يفتح واتساب عبر window.open، فنرصد الإرسال نفسه
+        document.addEventListener('submit', function (e) {
+          if (e.target && e.target.tagName === 'FORM') track(LABELS.booking);
+        }, true);
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>رحلات مكة الرياض | نقل بري متميز وحافلات </title>
