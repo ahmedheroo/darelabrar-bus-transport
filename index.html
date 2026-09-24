@@ -42,6 +42,8 @@
     <!-- تتبّع التواصل: ضغطة واتساب، ضغطة اتصال، إرسال نموذج الحجز -->
     <script>
       (function () {
+        if (window.__awConvInit) return;
+        window.__awConvInit = true;
         var TAG = 'AW-18457098824';
         var LABELS = {
           whatsapp: 'kUywCPfD-oIdEMj0g-FE',
