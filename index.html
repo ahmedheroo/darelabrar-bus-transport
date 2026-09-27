@@ -37,6 +37,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-18457098824');
+      gtag('config', 'AW-18464663641');
     </script>
 
     <!-- تتبّع التواصل: ضغطة واتساب، ضغطة اتصال، إرسال نموذج الحجز -->
@@ -44,17 +45,26 @@
       (function () {
         if (window.__awConvInit) return;
         window.__awConvInit = true;
-        var TAG = 'AW-18457098824';
-        var LABELS = {
-          whatsapp: 'kUywCPfD-oIdEMj0g-FE',
-          call: 'eXdaCPrD-oIdEMj0g-FE',
-          booking: 'ATLmCP3D-oIdEMj0g-FE'
-        };
+        var TARGETS = [
+          { tag: 'AW-18457098824', labels: {   // الطالب (الحملة القديمة، متوقفة)
+              whatsapp: 'kUywCPfD-oIdEMj0g-FE',
+              call:     'eXdaCPrD-oIdEMj0g-FE',
+              booking:  'ATLmCP3D-oIdEMj0g-FE'
+          } },
+          { tag: 'AW-18464663641', labels: {   // قوافل الصحيحان (الحملة الحالية)
+              whatsapp: 'zjXCCI6zg4cdENnQ0eRE',
+              call:     'GVMTCJGzg4cdENnQ0eRE',
+              booking:  '_QUsCJSzg4cdENnQ0eRE'
+          } }
+        ];
 
-        function track(label) {
-          if (!label) return;
+        function track(kind) {
+          if (!kind) return;
           if (typeof gtag !== 'function') return;
-          gtag('event', 'conversion', { send_to: TAG + '/' + label });
+          for (var i = 0; i < TARGETS.length; i++) {
+            var label = TARGETS[i].labels[kind];
+            if (label) gtag('event', 'conversion', { send_to: TARGETS[i].tag + '/' + label });
+          }
         }
 
         document.addEventListener('click', function (e) {
@@ -62,13 +72,13 @@
           var a = el && el.closest ? el.closest('a[href]') : null;
           if (!a) return;
           var href = a.getAttribute('href') || '';
-          if (href.indexOf('wa.me') > -1 || href.indexOf('api.whatsapp.com') > -1) track(LABELS.whatsapp);
-          else if (href.indexOf('tel:') === 0) track(LABELS.call);
+          if (href.indexOf('wa.me') > -1 || href.indexOf('api.whatsapp.com') > -1) track('whatsapp');
+          else if (href.indexOf('tel:') === 0) track('call');
         }, true);
 
         // نموذج الحجز يفتح واتساب عبر window.open، فنرصد الإرسال نفسه
         document.addEventListener('submit', function (e) {
-          if (e.target && e.target.tagName === 'FORM') track(LABELS.booking);
+          if (e.target && e.target.tagName === 'FORM') track('booking');
         }, true);
       })();
     </script>
