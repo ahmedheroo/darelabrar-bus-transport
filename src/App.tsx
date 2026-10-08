@@ -108,6 +108,17 @@ export default function App() {
                 <p className="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">
                   نقدم لك تجربة سفر استثنائية عبر أسطول من الحافلات الحديثة والمجهزة بكافة وسائل الراحة. احجز مقعدك الآن وانطلق في رحلة لا تُنسى.
                 </p>
+
+                <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                  <span className="flex items-center gap-2 bg-white/10 border border-white/30 backdrop-blur-sm text-white px-4 py-3 rounded-xl font-bold">
+                    <Clock size={20} className="text-secondary" />
+                    الانطلاق من مكة: 12:00 – 1:30 ظهرًا
+                  </span>
+                  <span className="flex items-center gap-2 bg-white/10 border border-white/30 backdrop-blur-sm text-white px-4 py-3 rounded-xl font-bold">
+                    <MapPin size={20} className="text-secondary" />
+                    الوصول للرياض: المنفوحة • البطحاء
+                  </span>
+                </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#booking" className="flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-secondary/20">
@@ -227,7 +238,8 @@ export default function App() {
                       <MapPin className="text-secondary" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-xl">مسارات متعددة للرحلات</h4>
+                      <h4 className="font-bold text-xl">محطات الوصول في الرياض</h4>
+                      <p className="text-primary-100">المنفوحة • البطحاء</p>
                      {/* <p className="text-primary-100">الرياض  ➔ مكة المكرمة </p>
                       <p className="text-primary-100">  مكة المكرمة ➔  الرياض</p>
                       <p className="text-primary-100">  الرياض ➔ المدينة المنورة  </p>
@@ -240,7 +252,7 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="font-bold text-xl">رحلات يومية</h4>
-                      <p className="text-primary-100">صباحية ومسائية لتناسب جدولك</p>
+                      <p className="text-primary-100">الانطلاق من مكة المكرمة من 12:00 حتى 1:30 ظهرًا</p>
                     </div>
                   </div>
                 </div>
