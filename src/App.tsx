@@ -392,6 +392,12 @@ export default function App() {
   );
 }
 
+// مواعيد الانطلاق من مكة ومحطات الوصول في الرياض — بتظهر في الفورم حسب المسار
+const FROM_MAKKAH = 'من مكة المكرمة إلى الرياض';
+const DEPARTURE_TIMES = ['12:00 ظهرًا', '12:30 ظهرًا', '1:00 ظهرًا', '1:30 ظهرًا'];
+const RIYADH_STATIONS = ['المنفوحة', 'البطحاء'];
+const toRiyadh = (route: string) => route.trim().endsWith('إلى الرياض');
+
 // Booking Form Component
 function BookingForm() {
   const [formData, setFormData] = useState({
@@ -399,9 +405,13 @@ function BookingForm() {
     phone: '',
         route: 'من مكة المكرمة إلى الرياض',
     date: '',
+    departureTime: DEPARTURE_TIMES[0],
+    station: RIYADH_STATIONS[0],
     passengers: '1',
     notes: ''
   });
+  const showTime = formData.route === FROM_MAKKAH;
+  const showStation = toRiyadh(formData.route);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -416,7 +426,9 @@ function BookingForm() {
 *الاسم:* ${formData.name}
 *رقم الجوال:* ${formData.phone}
 *مسار الرحلة:* ${formData.route}
-*تاريخ الرحلة:* ${formData.date}
+*تاريخ الرحلة:* ${formData.date}${showTime ? `
+*موعد الانطلاق من مكة:* ${formData.departureTime}` : ''}${showStation ? `
+*محطة الوصول في الرياض:* ${formData.station}` : ''}
 *عدد الركاب:* ${formData.passengers}
 *ملاحظات إضافية:* ${formData.notes || 'لا يوجد'}
 
@@ -470,6 +482,42 @@ function BookingForm() {
           <option value="من المدينة المنورة إلى الرياض ">من المدينة المنورة إلى الرياض </option>
         </select>
       </div>
+      {(showTime || showStation) && (
+        <div className="grid grid-cols-2 gap-4">
+          {showTime && (
+            <div>
+              <label htmlFor="departureTime" className="block text-sm font-medium text-slate-700 mb-1">موعد الانطلاق من مكة</label>
+              <select
+                id="departureTime"
+                name="departureTime"
+                value={formData.departureTime}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-slate-50"
+              >
+                {DEPARTURE_TIMES.map(t => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          {showStation && (
+            <div className={showTime ? '' : 'col-span-2'}>
+              <label htmlFor="station" className="block text-sm font-medium text-slate-700 mb-1">محطة الوصول في الرياض</label>
+              <select
+                id="station"
+                name="station"
+                value={formData.station}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-slate-50"
+              >
+                {RIYADH_STATIONS.map(st => (
+                  <option key={st} value={st}>{st}</option>
+                ))}
+              </select>
+            </div>
+          )}
+        </div>
+      )}
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="date" className="block text-sm font-medium text-slate-700 mb-1">تاريخ الرحلة</label>
