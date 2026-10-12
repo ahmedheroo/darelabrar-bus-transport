@@ -83,7 +83,7 @@ export default function App() {
         <section id="home" className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop" 
+              src="/gallery/hero.jpg" 
               alt="حافلة حديثة في الطريق" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -180,29 +180,25 @@ export default function App() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=2071&auto=format&fit=crop",
-                "/bus4.jpeg",
-                "/bus5.jpeg",
-                "/G11.jpeg",
-                "/G2.jpeg",
-                "/bus1.jpeg"
+                ...Array.from({ length: 23 }, (_, i) => `/gallery/bus-${String(i + 1).padStart(2, '0')}.jpg`)
               ].map((img, idx) => (
                 <motion.div 
                   key={idx}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  transition={{ delay: (idx % 3) * 0.1 }}
                   className="relative group overflow-hidden rounded-2xl aspect-[4/3] shadow-md"
                 >
                   <img 
                     src={img} 
-                    alt={`حافلة ${idx + 1}`} 
+                    alt={`حافلة موصل ${idx + 1}`}
+                    loading="lazy" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <span className="text-white font-medium text-lg">حافلة VIP مجهزة بالكامل</span>
+                    <span className="text-white font-medium text-lg">حافلة حديثة ومكيّفة</span>
                   </div>
                 </motion.div>
               ))}
