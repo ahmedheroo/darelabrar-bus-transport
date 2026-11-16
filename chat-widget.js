@@ -939,7 +939,6 @@
     var routeField = createSelect('route', getText('bookingRoute'), [
       { value: '', label: isRtl ? '-- اختر المسار --' : '-- Select route --' },
       { value: 'mecca-to-riyadh', label: getRoute('meccaToRiyadh') },
-      { value: 'riyadh-to-mecca', label: getRoute('riyadhToMecca') },
       { value: 'medina-to-riyadh', label: getRoute('medinaToRiyadh') }
     ], isRtl);
     form.appendChild(routeField);
