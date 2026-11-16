@@ -104,7 +104,6 @@ export default function App() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
                   رحلات مريحة وآمنة من <span className="text-secondary">مكة المكرمة</span> إلى <span className="text-secondary">الرياض</span>
                 </h1>
-                <p className="text-center text-lg md:text-xl text-slate-200 mb-5 leading-relaxed">ومن الرياض الي مكة المكرمة</p>
                 <p className="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">
                   نقدم لك تجربة سفر استثنائية عبر أسطول من الحافلات الحديثة والمجهزة بكافة وسائل الراحة. احجز مقعدك الآن وانطلق في رحلة لا تُنسى.
                 </p>
@@ -474,7 +473,6 @@ function BookingForm() {
           className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-slate-50"
         >
           <option value="من مكة المكرمة إلى الرياض">من مكة المكرمة إلى الرياض</option>
-          <option value="من الرياض إلى مكة المكرمة">من الرياض إلى مكة المكرمة</option>
           <option value="من المدينة المنورة إلى الرياض ">من المدينة المنورة إلى الرياض </option>
         </select>
       </div>
