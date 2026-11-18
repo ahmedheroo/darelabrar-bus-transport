@@ -21,6 +21,7 @@ import {
 
 const WHATSAPP_NUMBER = "966574262136";
 const PHONE_NUMBER = "0574262136";
+const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("السلام عليكم، أبغى أحجز باص من مكة إلى الرياض")}`;
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -124,7 +125,7 @@ export default function App() {
                     <Calendar size={24} />
                     احجز رحلتك الآن
                   </a>
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all">
                     <MessageCircle size={24} />
                     تواصل عبر واتساب
                   </a>
@@ -320,7 +321,7 @@ export default function App() {
                 الشركة الرائدة في مجال النقل البري في المملكة العربية السعودية. نقدم خدمات نقل متميزة وآمنة بين مكة المكرمة والرياض بأسطول حديث ومجهز.
               </p>
               <div className="flex gap-4">
-                <a href="https://wa.me/966574262136?text=السلام%20عليكم،%20أريد%20الاستفسار" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                <a href="https://wa.me/966574262136?text=السلام%20عليكم،%20أبغى%20أحجز%20باص%20من%20مكة%20إلى%20الرياض" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                   <MessageCircle size={20} />
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61571673840905" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
@@ -367,7 +368,7 @@ export default function App() {
       {/* Floating Buttons */}
       <div className="fixed bottom-6 left-6 z-50 flex flex-col gap-4">
         <a 
-          href={`https://wa.me/${WHATSAPP_NUMBER}`} 
+          href={WA_LINK} 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform"
@@ -455,7 +456,7 @@ function BookingForm() {
           type="tel" 
           id="phone" 
           name="phone" 
-          required
+          required={false}
           dir="ltr"
           value={formData.phone}
           onChange={handleChange}
